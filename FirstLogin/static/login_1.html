@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--<link href="Login.css" type="text/css" rel="stylesheet">-->
+    <title>登陆界面</title>
+    <style>
+	.center{width: 500px;height: 0px';text-align: center;line-height: 50px;}
+
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<script>
+	function myfunction()
+	{
+		var x=document.getElementById("name").value;
+		var y=document.getElementById("password").value;
+		if(x==""||y=="")
+		{
+			alert("用户名或密码不能为空")
+		}
+		$.ajax({
+            url: "http://127.0.0.1/Adminlogin", //加上这句话
+           // xhrFields: {
+            //    withCredentials: true
+            //},
+            //crossDomain: true,
+            type: 'POST',
+            async: false,
+            dataType: "text",
+            data: {
+                "admin_id": $("#name").val(),
+                "password": $("#password").val(),
+            },
+				success:function(data){
+					var x=data
+        			if (x){
+        			window.location.href="Homepage.html";
+        			}
+        		}
+
+         })
+    }
+</script>
+<body>
+<center>
+    <form class="center">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <fieldset>
+            <legend>Adminlogin:</legend>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name: <input id="name" type="text"><br>
+            password: <input id="password" type="text"><br>
+            <button type="button" onclick="myfunction()">Enter</button>
+        </fieldset>
+    </form>
+</center>
+</body>
+</html>
+

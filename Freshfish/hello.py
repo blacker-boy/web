@@ -1,7 +1,8 @@
 import  web
-import blog
+from Freshfish import blog
+
 urls=(
-    '/blog',blog.app_blog,
+    '/blog', blog.app_blog,
     '/(.*)','index'
 )
 class index:
