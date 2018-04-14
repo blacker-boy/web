@@ -26,3 +26,4 @@ class Home_page:
 
 if __name__=='__main__':
     app.run()
+    print('gitup')
