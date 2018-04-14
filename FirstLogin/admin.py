@@ -24,13 +24,5 @@ class Home_page:
     def GET(self):
         return web.seeother('/static/Homepage.html',True)
 
-
-
-
-
-
-
-
 if __name__=='__main__':
     app.run()
-    print('asasas')
