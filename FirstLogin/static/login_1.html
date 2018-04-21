@@ -33,9 +33,13 @@
                 "password": $("#password").val(),
             },
 				success:function(data){
-					var x=data
-        			if (x){
+					<!--alert(data);-->
+					<!--var x=JSON.parse(data);-->
+        			if (data==1){
         			window.location.href="Homepage.html";
+        			}
+        			else {
+        			alert("用户名或密码错误");
         			}
         		}
 
