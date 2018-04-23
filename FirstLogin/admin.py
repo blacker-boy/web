@@ -19,7 +19,7 @@ class Admin_Login:
         y=params['password']
         x=str(x)
         y=str(y)
-        print(x,y)
+        # print(x,y)
         db = MySQLdb.connect("localhost", port=3306, user="root", passwd="123456", db="admin_login", charset='utf8')
         cursor=db.cursor()
         # # sql="""create table adminlogin(
@@ -41,7 +41,7 @@ class Admin_Login:
             for row in results:
                 adminid = row[0]
                 password = row[1]
-                print(adminid, password)
+                # print(adminid, password)
                 if  adminid==x  and  password==y :
                     # a=Home_page()
                     # a.GET()
